@@ -20,10 +20,18 @@ public class MPan {
     public MPan(){
     
     }
+    //metodo para agregar panes
+    
+    
+    //metodo para eliminar panes
+    
+    
+    //metodo para actualizar precio o nombre edel pan 
+    
     
     //metodo que se encargue de obtener toda la lista de mis panes
     
-    public Vector<MPan> listaPanes(){
+    public Vector<MPan> listaPanes() throws ClassNotFoundException{
         Vector<MPan> lp = new Vector<MPan>();
         Connection con = null;
         PreparedStatement ps = null;
