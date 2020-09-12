@@ -59,7 +59,7 @@ public class DVenta {
     public void setSubtotal_dventa(float subtotal_dventa) {
         this.subtotal_dventa = subtotal_dventa;
     }
-    
-    
+
+   
     
 }
