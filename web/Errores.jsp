@@ -1,10 +1,25 @@
 <%-- 
-    Document   : inicio.jsp
-    Created on : 12/09/2020, 12:40:17 PM
+    Document   : Errores
+    Created on : 12/09/2020, 05:33:31 PM
     Author     : Jorge Rivero
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" session="true"%>
+
+<% 
+    String usuario = "";
+    HttpSession sesionUser = request.getSession();
+    if(sesionUser.getAttribute("usuario") == null){
+         
+%>
+<jsp:forward page="inicio.jsp">
+    <jsp:param name="error" value="Es obligatorio Autenticarse pro"/>
+</jsp:forward>
+
+<%}else{
+    usuario = (String)sesionUser.getAttribute("usuario");
+     }}    
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -28,7 +43,7 @@
 			<a href="#">Productos</a>
 			<a href="contacto.html">Contactos</a>
 			<a href="#">Cliente</a>
-                        <a href="registro.jsp">Registrarse</a>
+                        <a href="inicio.jsp">Iniciar Sesion</a>
 		</nav>
 	</header>
 	<section class="globito">
@@ -44,32 +59,7 @@
 	</section>
         
         <section class = "iniciosesion">
-            <table width="800" border="0" align="center">
-                <tr>
-                    <td colspan="2"><h2>Inicio de Sesion</h2></td>
-                </tr>
-                <tr>
-                    <td>
-                <from method="post" name="formulario" action="VerificarUsuario">
-                    <table width="620" border="0">                       
-                        <tr>
-                            <td>Usuario:</td>
-                            <td> <input type="text" name="user" id="user"> </td>
-                        </tr>
-                        <tr>
-                            <td>Contraseña:</td>
-                            <td> <input type="password" name="pass" id="pass"> </td>
-                        </tr>
-                        <tr>
-                            <td><a href="registro.jsp">Nueva Cuenta</a></td>
-                            <td><input type="submit" value="Entrar" name="inicio"></td>
-                        </tr>
-                    </table>
-                </from>
-                    </td>
-                </tr>
-            </table>
-            
+            <h2>Error al introducir sus credenciales favor de intentarlo otra vez crack</h2>
         </section>
         
 	<footer class="footer">
@@ -78,3 +68,4 @@
 
     </body>
 </html>
+

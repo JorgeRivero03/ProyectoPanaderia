@@ -65,22 +65,12 @@ public class VerificarUsuario extends HttpServlet {
                     response.sendRedirect("MostrarPanes.jsp");
                 }else{
                     response.sendRedirect("Admin.jsp");
-                }else{
+                }
+          
+            }else{
                     response.sendRedirect("Errores.jsp");
                 }
             
-            }
-            
-            
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet VerificarUsuario</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet VerificarUsuario at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
         }
     }
 

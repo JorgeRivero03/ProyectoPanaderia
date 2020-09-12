@@ -58,7 +58,7 @@
                         </tr>
                         <tr>
                             <td>Contraseña:</td>
-                            <td> <input type="password" name="pass" id="user"> </td>
+                            <td> <input type="password" name="pass" id="pass"> </td>
                         </tr>
                         <tr>
                             <td><a href="registro.jsp">Nueva Cuenta</a></td>
