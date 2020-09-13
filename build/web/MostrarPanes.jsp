@@ -85,7 +85,7 @@ if (sesionuser.getAttribute("usuario") == null) {
 	</section>
         <section class="menu" >
             <a href="MostrarPanes.jsp">Mostrar los panes</a>
-            <a href="AgregarPan1.jsp">Agregar al carriro de compras</a>
+            <a href="AgregarPan1.jsp">Agregar al carrito de compras</a>
             <a hrf="CerrarSesion.jsp">Cerrar Sesion</a>
         </section>
 	<footer class="footer">

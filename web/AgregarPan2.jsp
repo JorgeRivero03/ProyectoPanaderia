@@ -1,6 +1,6 @@
 <%-- 
-    Document   : MostrarPanes
-    Created on : 12/09/2020, 07:05:48 PM
+    Document   : AgregarPan2
+    Created on : 13/09/2020, 08:25:09 AM
     Author     : Jorge Rivero
 --%>
 
@@ -61,24 +61,44 @@ if (sesionuser.getAttribute("usuario") == null) {
 
 	<section class="pan">
             
-            <%//obtener la lista de los productos,panes
+            <%//crear la instancia del pan, para poder poder la buscar la pieza de pan que se quiera comprar
                 
-                Vector<MPan> vecpan = new MPan().listaPanes();
+                MPan pan = new MPan().buscarPan(Integer.parseInt(request.getParameter("cod")));
                 
-                //recorrer toda la lista de panes
-                //estamos instanciando un objeto de MPan y vamos a recorrer
-                //el tamaño del vector de los panes que estan adentro
-                for(MPan pan :vecpan){
+
             %>
-            <p class="img" >
-            <table>
-                <tr>
-                    
-                    <td><%=pan.getNom_pan() %></td>
-                    <td><%=pan.getStock_pan() %> </td>
-                    <td><%=pan.getPre_pan() %> </td>
-                </tr></table></p>
-		<%}%>
+         
+            <table width="100%" border="0">
+                <form name="agregarPan" method="post" action="AgregarPanCarrito">
+                    <table width="100%" border="0">
+                        <tr>
+                            <td>Codigo:</td>
+                            <td><input type="text" name="id" id="id" readonly="readonly" value="<%=pan.getId_pan() %>"></td>
+                        </tr>
+                        <tr>
+                            <td>Nombre del Pan:</td>
+                            <td><input type="text" name="pan" id="pan" readonly="readonly" value="<%=pan.getNom_pan() %>"></td>
+                        </tr>
+                        <tr>
+                            <td>Precio del Pan:</td>
+                            <td><input type="text" name="precio" id="precio" readonly="readonly" value="<%=pan.getPre_pan() %>"></td>
+                        </tr>
+                        <tr>
+                            <td>Stock del Pan:</td>
+                            <td><input type="text" name="stock" id="stock" readonly="readonly" value="<%=pan.getStock_pan() %>"></td>
+                        </tr>
+                        <tr>
+                            <td>Cantidad:</td>
+                            <td><input type="text" name="cantidad" id="cantidad" value="1"> </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="submit" name="comprar" value="Regustrar Compra"></td>
+                        </tr>
+                    </table>                   
+                </form>
+            </table>
+            
 	</section>
 	<section class="hide">
 		

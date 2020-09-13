@@ -1,6 +1,6 @@
 <%-- 
-    Document   : MostrarPanes
-    Created on : 12/09/2020, 07:05:48 PM
+    Document   : AgregarPan1
+    Created on : 12/09/2020, 08:05:41 PM
     Author     : Jorge Rivero
 --%>
 
@@ -58,8 +58,17 @@ if (sesionuser.getAttribute("usuario") == null) {
 	<h2 class="titulo-p">
 	Pan Artesanal
 	</h2>
-
+        
 	<section class="pan">
+            
+            <table width="100" border="0">
+                <tr>
+                    <th>Nombre del pan</th>
+                    <th>Stock</th>
+                    <th>Precio</th>
+                    <th>Proceso</th>
+                </tr>
+            
             
             <%//obtener la lista de los productos,panes
                 
@@ -69,6 +78,9 @@ if (sesionuser.getAttribute("usuario") == null) {
                 //estamos instanciando un objeto de MPan y vamos a recorrer
                 //el tamaño del vector de los panes que estan adentro
                 for(MPan pan :vecpan){
+                    
+                //es cuando el usuario selecciona que pan desea 
+                String direccion ="AgregarPan2.jsp?cod="+pan.getId_pan();
             %>
             <p class="img" >
             <table>
@@ -77,6 +89,7 @@ if (sesionuser.getAttribute("usuario") == null) {
                     <td><%=pan.getNom_pan() %></td>
                     <td><%=pan.getStock_pan() %> </td>
                     <td><%=pan.getPre_pan() %> </td>
+                    <td><a href="<%=direccion %>">Comprar</td>
                 </tr></table></p>
 		<%}%>
 	</section>
