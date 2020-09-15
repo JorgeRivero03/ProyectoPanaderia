@@ -28,7 +28,7 @@
 			<a href="#">Productos</a>
 			<a href="contacto.html">Contactos</a>
 			<a href="#">Cliente</a>
-                        <a href="registro.jsp">Registrarse</a>
+                        <a href="Registro.jsp">Registrarse</a>
 		</nav>
 	</header>
 	<section class="globito">

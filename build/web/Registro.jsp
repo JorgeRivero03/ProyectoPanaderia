@@ -1,6 +1,6 @@
 <%-- 
-    Document   : inicio.jsp
-    Created on : 12/09/2020, 12:40:17 PM
+    Document   : Registro
+    Created on : 13/09/2020, 09:26:05 PM
     Author     : Jorge Rivero
 --%>
 
@@ -27,8 +27,8 @@
 			<a href="nosotros.html">Nosotros</a>
 			<a href="#">Productos</a>
 			<a href="contacto.html">Contactos</a>
-			<a href="#">Cliente</a>
-                        <a href="Registro.jsp">Registrarse</a>
+			<a href="Cliente.jsp">Cliente</a>
+
 		</nav>
 	</header>
 	<section class="globito">
@@ -40,8 +40,16 @@
 	</h2>
 
 	<section class="hide">
-		
-	</section>
+            <form method="pan" action="RegistrarUsuario">
+                <input type="text" name="nombre">Nombre:</input>
+                <input type="text" name="apellidoPaterno">Apellido Paterno:</input>
+                <input type="text" name="password">Contraseña:</input>
+                <input type="text" name="usuario">Usuario:</input>
+                <input>Usuario:</input>
+
+            </form>
+        </section>
+        
         
         <section class = "iniciosesion">
             <table width="800" border="0" align="center">
