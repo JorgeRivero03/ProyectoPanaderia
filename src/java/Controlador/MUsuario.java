@@ -109,6 +109,8 @@ public class MUsuario {
         
          PreparedStatement ps = con.prepareStatement(sql);
           
+          ps.setInt(5, u.getId_usu());
+         
           ps.setString(1, u.getNom_usu());
           
           ps.setString(2, u.getAppat_usu());
@@ -117,7 +119,7 @@ public class MUsuario {
           
           ps.setString(4, u.getPass_usu());
           
-          ps.setInt(5, u.getId_usu());
+
           
           estatus = ps.executeUpdate();
           
