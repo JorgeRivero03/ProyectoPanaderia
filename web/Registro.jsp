@@ -58,7 +58,7 @@
                 </tr>
                 <tr>
                     <td>
-                <from method="post" name="formulario" action="VerificarUsuario">
+                <from method="post" name="formulario" action="EditarServlet">
                     <table width="620" border="0">                       
                         <tr>
                             <td>Usuario:</td>
