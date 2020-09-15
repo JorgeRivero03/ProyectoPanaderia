@@ -38,47 +38,22 @@
 	<h2 class="titulo-p">
 	Pan Artesanal
 	</h2>
-
-	<section class="hide">
-            <form method="pan" action="RegistrarUsuario">
+    <sectio>
+        
+    </sectio>
+    <section class="registro"><h3>
+            <form method="pan" action="GuardarUsuario">
                 <input type="text" name="nombre">Nombre:</input>
                 <input type="text" name="apellidoPaterno">Apellido Paterno:</input>
                 <input type="text" name="password">Contraseña:</input>
                 <input type="text" name="usuario">Usuario:</input>
-                <input>Usuario:</input>
-
+                 <td><input type="submit" value="Entrar" name="registrar">
+        </h3>
             </form>
         </section>
         
         
-        <section class = "iniciosesion">
-            <table width="800" border="0" align="center">
-                <tr>
-                    <td colspan="2"><h2>Inicio de Sesion</h2></td>
-                </tr>
-                <tr>
-                    <td>
-                <from method="post" name="formulario" action="EditarServlet">
-                    <table width="620" border="0">                       
-                        <tr>
-                            <td>Usuario:</td>
-                            <td> <input type="text" name="user" id="user"> </td>
-                        </tr>
-                        <tr>
-                            <td>Contraseña:</td>
-                            <td> <input type="password" name="pass" id="pass"> </td>
-                        </tr>
-                        <tr>
-                            <td><a href="Registro.jsp">Nueva Cuenta</a></td>
-                            <td><input type="submit" value="Entrar" name="inicio"></td>
-                        </tr>
-                    </table>
-                </from>
-                    </td>
-                </tr>
-            </table>
-            
-        </section>
+
         
 	<footer class="footer">
 		<p>Desarrollado por Jorge Rivero</p>

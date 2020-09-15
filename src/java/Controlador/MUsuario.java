@@ -105,7 +105,7 @@ public class MUsuario {
         
         try{
         Connection con = Conexion.getConexion();
-        String sql ="Update Datos set nombre = ?, password: ?, apellidoPaterno= ?, usuario = ?, where id = ?";
+        String sql ="Update Datos set nombre = ?, password = ?, apellidoPaterno= ?, usuario = ?, where id = ?";
         
          PreparedStatement ps = con.prepareStatement(sql);
           

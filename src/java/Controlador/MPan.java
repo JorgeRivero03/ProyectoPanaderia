@@ -20,17 +20,155 @@ public class MPan {
     public MPan(){
     
     }
-    //metodo para agregar panes
+    //metodo para agregar un nuevo pan
+    public static int GuardarPan(MPan p) throws ClassNotFoundException{
+        int  estatus = 0;
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        
+
+        try{
+        
+            con = Conexion.getConexion();
+            String q ="insert into MPan (id_pan, id_cpan, id_csp, stock_pan, pre_pan, nombre) values (?, ?, ?, ?, ?)";
+            
+          ps = con.prepareStatement(q);
+          
+          ps.setInt(1, p.getId_pan());
+          
+          ps.setInt(2,p.getId_cpan() );
+          
+          ps.setInt(3, p.getId_csp() );
+          
+          ps.setInt(4, p.getStock_pan());
+          
+          ps.setFloat(5, p.getPre_pan());
+          
+          ps.setString(6, p.getNom_pan());
+          
+          estatus = ps.executeUpdate();
+          
+
+          con.close();
+        
+        }catch(SQLException ed){
+            System.out.println("No conecto a la tabla");
+            System.out.println(ed.getMessage());
+            System.out.println(ed.getStackTrace());
+            
+        }
+        return estatus;
+    
+    }
+    //metodo para eleminar un pan
+    
+    public static int EliminarPan(int id) throws ClassNotFoundException{
+    
+        int estatus = 0;
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        
+        try{
+        
+            con = Conexion.getConexion();
+            String q = "delete from Datos where id=? ";
+            ps = con.prepareStatement(q);
+            ps.setInt(1, id);
+            estatus = ps.executeUpdate();
+            con.close();
+        
+        }catch(Exception ed){
+            System.out.println("No conecto a la tabla");
+            System.out.println(ed.getMessage());
+            System.out.println(ed.getStackTrace());
+        }
+        return estatus;
+        
+    
+    }
     
     
-    //metodo para eliminar panes
     
+    //metodo para actualizar un usuario
+    public static int ActualizarPan(MPan p){
     
-    //metodo para actualizar precio o nombre edel pan 
+        int estatus = 0;
+         
+        
+        try{
+        Connection con = Conexion.getConexion();
+        String sql ="Update Datos set nombre = ?, precio= ?, where id = ?, id_pan =?, id_cspan=?, stockPan = ?";
+        
+         PreparedStatement ps = con.prepareStatement(sql);
+          
+          
+          
+          ps.setInt(1, p.getId_pan());
+          
+          ps.setInt(2,p.getId_cpan() );
+          
+          ps.setInt(3, p.getId_csp() );
+          
+          ps.setInt(4, p.getStock_pan());
+          
+          ps.setFloat(5, p.getPre_pan());
+          
+
+          
+          estatus = ps.executeUpdate();
+          
+
+          con.close();
+        
+        }catch(Exception ed){
+            System.out.println("No conecto a la tabla");
+            System.out.println(ed.getMessage());
+            System.out.println(ed.getStackTrace());
+            
+        
+        }
+        return estatus;
+    }
+    //metodo para consultar a todos los panes
     
+    public static List<MPan> getAllPan(){
     
-    //metodo que se encargue de obtener toda la lista de mis panes
+        List<MPan> lista = new ArrayList<MPan>(); 
+        try{
+        
+            Connection con = Conexion.getConexion();
+            String sql = "select * from Datos ";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()){
+                MPan p = new MPan();
+                    p.setId_pan(rs.getInt(sql));
+                    p.setId_cpan(rs.getInt(2));
+                    p.setId_csp(rs.getInt(3));
+                    p.setStock_pan(rs.getInt(4));
+                    p.setPre_pan(rs.getFloat(5));
+                    p.setNom_pan(rs.getString(6));
+                    
+                    lista.add(p);
+                    
+            }
+            
+            con.close();
+            
+        }catch(Exception ed){
+            System.out.println("No conecto a la tabla");
+            System.out.println(ed.getMessage());
+            System.out.println(ed.getStackTrace());
+            
+        
+        }
+        return lista;
     
+    }
     public Vector<MPan> listaPanes() throws ClassNotFoundException{
         Vector<MPan> lp = new Vector<MPan>();
         Connection con = null;
