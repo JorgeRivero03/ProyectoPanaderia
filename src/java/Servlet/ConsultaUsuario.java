@@ -30,7 +30,12 @@ public class ConsultaUsuario extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -65,8 +70,8 @@ public class ConsultaUsuario extends HttpServlet {
                         +"<td>"+u.getNom_usu()+"</td>"
                         +"<td>"+u.getAppat_usu()+"</td>"
                         +"<td>"+u.getPass_usu()+"</td>"
-                        + "<td><a href='EditarServlet=? id=e.getId_usu() '>Vamos a Editar</a></td>"
-                        + "<td><a href='BorrarServlet=? id=e.getId_usu() '>Vamos a Borrar</a></td>"
+                        + "<td><a href='EditarServlet? id=e.getId_usu() '>Vamos a Editar</a></td>"
+                        + "<td><a href='BorrarServlet? id=e.getId_usu() '>Vamos a Borrar</a></td>"
                         +"</tr>");
                 //con esto vamos a pasar el parametro del Id
             }   
@@ -75,21 +80,11 @@ public class ConsultaUsuario extends HttpServlet {
             
             out.println("</body>");
             out.println("</html>");
-        }
-    }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
 
     }
 
    
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+
   
     }
 

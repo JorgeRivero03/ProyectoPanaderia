@@ -28,6 +28,14 @@
         <servlet-name>BorrarServlet</servlet-name>
         <servlet-class>Servlet.BorrarServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditarServlet</servlet-name>
+        <servlet-class>Servlet.EditarServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditarServlet2</servlet-name>
+        <servlet-class>Servlet.EditarServlet2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>VerificarUsuario</servlet-name>
         <url-pattern>/VerificarUsuario</url-pattern>
@@ -55,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>BorrarServlet</servlet-name>
         <url-pattern>/BorrarServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditarServlet</servlet-name>
+        <url-pattern>/EditarServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditarServlet2</servlet-name>
+        <url-pattern>/EditarServlet2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

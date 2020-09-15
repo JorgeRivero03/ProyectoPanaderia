@@ -69,7 +69,7 @@
                             <td> <input type="password" name="pass" id="pass"> </td>
                         </tr>
                         <tr>
-                            <td><a href="registro.jsp">Nueva Cuenta</a></td>
+                            <td><a href="Registro.jsp">Nueva Cuenta</a></td>
                             <td><input type="submit" value="Entrar" name="inicio"></td>
                         </tr>
                     </table>
