@@ -40,6 +40,10 @@
         <servlet-name>GuardarUsuario</servlet-name>
         <servlet-class>Servlet.GuardarUsuario</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ConsultaPan</servlet-name>
+        <servlet-class>Servlet.ConsultaPan</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>VerificarUsuario</servlet-name>
         <url-pattern>/VerificarUsuario</url-pattern>
@@ -79,6 +83,10 @@
     <servlet-mapping>
         <servlet-name>GuardarUsuario</servlet-name>
         <url-pattern>/GuardarUsuario</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultaPan</servlet-name>
+        <url-pattern>/ConsultaPan</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
